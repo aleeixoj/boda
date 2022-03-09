@@ -1,9 +1,21 @@
 import { Box, Flex, Heading, Spacer, Text, Image } from '@chakra-ui/react';
 import type { NextPage } from 'next';
+import Router from 'next/router';
+import { useEffect } from 'react';
+import { useCookies } from 'react-cookie';
 
 import flag from '../../../public/flag.svg';
+import { Header } from '../../components/Header';
 
 const Pool: NextPage = () => {
+  const [useCode] = useCookies(['access_code']);
+
+  useEffect(() => {
+    if (!useCode.access_code || useCode.access_code.length < 1) {
+      Router.push('/alert');
+    }
+  }, []);
+
   return (
     <Flex
       direction={'column'}
@@ -12,7 +24,7 @@ const Pool: NextPage = () => {
       padding={'1.4rem'}
     >
       <Flex dir="column" justify={'center'} align="center">
-        <Image src="pool.svg" />
+        <Header />
       </Flex>
       <Spacer />
       <Box p="3">
