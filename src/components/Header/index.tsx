@@ -13,7 +13,7 @@ import logo from '../../../public/pool.svg';
 
 export function Header() {
   return (
-    <Flex justify={'center'} align={'center'} p="2">
+    <Flex justify={'center'} align={'center'}>
       <Box boxSize="">
         <Image src={logo} objectFit="cover" />
       </Box>

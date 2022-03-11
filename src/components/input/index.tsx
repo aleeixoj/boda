@@ -8,6 +8,7 @@ import styles from './styles.module.scss';
 interface IProps {
   name: string;
   label?: string;
+  error?: string;
 }
 
 type InputProps = JSX.IntrinsicElements['input'] & IProps;
@@ -15,6 +16,7 @@ type InputProps = JSX.IntrinsicElements['input'] & IProps;
 export function Input({ name, label, children, ...rest }: InputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [labelStyle, setLabelStyle] = useState({});
+
   const { fieldName, defaultValue, registerField, error } = useField(name);
 
   useEffect(() => {

@@ -3,7 +3,7 @@ import { Form } from '@unform/web';
 import { motion } from 'framer-motion';
 import { NextPage } from 'next';
 import Router from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { IoWarning } from 'react-icons/io5';
 
@@ -17,6 +17,7 @@ const Alert: NextPage = () => {
   const userCodes = ['aleixo', 'bruna', 'andre'];
 
   const [cookie, setCookie] = useCookies(['access_code']);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     if (!cookie.access_code || cookie.access_code.length < 1) {
@@ -26,15 +27,23 @@ const Alert: NextPage = () => {
     }
   }, []);
 
+  async function onError(value: string) {
+    return setError(value);
+  }
+
   async function handleSubmit({ access_code }: IDataTypes) {
     console.log(access_code);
 
-    userCodes.map((userCode: string) => {
-      if (access_code === userCode) {
-        setCookie('access_code', userCode);
-        Router.push('/pool');
-      }
+    const exists = userCodes.some((userCode: string) => {
+      return access_code === userCode;
     });
+
+    if (exists) {
+      setCookie('access_code', access_code);
+      Router.push('/pool');
+    } else {
+      onError('Código de acesso inválido!');
+    }
   }
 
   return (
@@ -78,8 +87,17 @@ const Alert: NextPage = () => {
             flexDirection={'column'}
             textAlign={'center'}
           >
-            <Input name="access_code" label="Código de acesso" />
-            <Button type="submit">Confirmar</Button>
+            <Input name="access_code" label="Código de acesso" error={error} />
+            <Button
+              bg={'green.300'}
+              color={'white'}
+              _hover={{ bg: 'green.400' }}
+              _active={{ bg: 'green.400' }}
+              _focus={{ boxShadow: 'var(--colors-green-800)' }}
+              type="submit"
+            >
+              Confirmar
+            </Button>
           </Box>
         </Form>
       </Box>

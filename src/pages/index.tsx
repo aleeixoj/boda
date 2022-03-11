@@ -26,85 +26,112 @@ const Home: NextPage = () => {
     }
   }
   return (
-    <Flex justify={'center'} align={'center'} direction={'column'} width="full">
-      <motion.div
-        initial={{ rotate: 180, scale: 0 }}
-        animate={{ rotate: 360, scale: 1 }}
-        transition={{
-          type: 'spring',
-          stiffness: 260,
-          damping: 20,
-        }}
+    <Flex
+      justify={'center'}
+      align={'center'}
+      direction={'column'}
+      width="full"
+      height={'100vh'}
+      bg={
+        'url(https://i.pinimg.com/originals/b2/ae/21/b2ae21987249aeb22ef94dc7c0f8870c.jpg)'
+      }
+    >
+      <Box
+        bg={'white'}
+        boxSize={'90%'}
+        boxShadow={'0px 0px 15px 1px rgba(0,0,0,0.4)'}
+        display={'flex'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        flexDirection={'column'}
+        padding={'1rem 0'}
+        // margin={'1rem'}
       >
-        <Image
-          src={'nos.jpg'}
-          objectFit={'cover'}
-          boxSize="15rem"
-          borderRadius="full"
-        />
-      </motion.div>
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{
-          type: 'spring',
-          stiffness: 260,
-          damping: 20,
-        }}
-      >
-        <Heading
-          textAlign={'center'}
-          fontFamily="Great Vibes"
-          fontWeight={'300'}
-          fontSize={'7xl'}
+        <motion.div
+          initial={{ rotate: 180, scale: 0 }}
+          animate={{ rotate: 360, scale: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+          }}
         >
-          Aleixo e Bruna
-        </Heading>
+          <Image
+            src={'nos.jpg'}
+            objectFit={'cover'}
+            boxSize="15rem"
+            borderRadius="full"
+          />
+        </motion.div>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+          }}
+        >
+          <Box textAlign={'center'}>
+            <Heading
+              fontFamily="Great Vibes"
+              fontWeight={'300'}
+              fontSize={'7xl'}
+            >
+              Aleixo e Bruna
+            </Heading>
 
-        <Text>Convidam para sua festa de casamento</Text>
-        <Text>que sera realizado no dia</Text>
-        <Spacer p="3" />
-        <Heading fontFamily="Great Vibes" fontWeight={'300'} fontSize={'5xl'}>
-          28 de maio de 2022
-        </Heading>
-        <Text>apartir das 10:00 AM</Text>
-        <Spacer p="2" />
-        <Heading fontSize={'2xl'}>Local:</Heading>
-        <Text>Rua Leonardo Difert, 157</Text>
-        <Text>São José dos Pinhais - PR</Text>
-      </motion.div>
-      <Spacer p="5" />
-      <Flex
-        justify="center"
-        align="center"
-        bg="gray.200"
-        width={'full'}
-        height={'1px'}
-      >
-        <BsHeartFill color="red" />
-      </Flex>
-      <Spacer p="5" />
-      <Flex justify="center" align="center" direction={'column'} gap={'1rem'}>
-        <Button
-          bg={'purple.300'}
-          color={'white'}
-          _hover={{ bg: 'purple.400' }}
-          _active={{ bg: 'purple.400' }}
-          _focus={{ boxShadow: 'var(--colors-purple-800)' }}
-          onClick={checkNextPage}
+            <Text>Convidam para sua festa de casamento</Text>
+            <Text>que será realizado no dia</Text>
+            <Spacer p="3" />
+            <Heading
+              fontFamily="Great Vibes"
+              fontWeight={'300'}
+              fontSize={'5xl'}
+            >
+              28 de maio de 2022
+            </Heading>
+            <Text>apartir das 10:00 AM</Text>
+            <Spacer p="2" />
+            <Heading fontSize={'2xl'}>Local:</Heading>
+            <Text>Rua Leonardo Difert, 157</Text>
+            <Text>São José dos Pinhais - PR</Text>
+          </Box>
+        </motion.div>
+        <Spacer p="5" />
+        <Flex
+          justify="center"
+          align="center"
+          bg="gray.200"
+          width={'full'}
+          height={'1px'}
         >
-          Confirmar presença
-        </Button>
-        <Link
-          href={
-            'https://www.querodecasamento.com.br/lista-de-casamento/aleixok-brunasa'
-          }
-        >
-          <a target="_blank" rel="noreferrer">
-            Lista de presentes
-          </a>
-        </Link>
-      </Flex>
+          <BsHeartFill color="red" />
+        </Flex>
+        <Spacer p="5" />
+        <Flex justify="center" align="center" direction={'column'} gap={'1rem'}>
+          <Button
+            bg={'purple.300'}
+            color={'white'}
+            _hover={{ bg: 'purple.400' }}
+            _active={{ bg: 'purple.400' }}
+            _focus={{ boxShadow: 'var(--colors-purple-800)' }}
+            onClick={checkNextPage}
+          >
+            Confirmar presença
+          </Button>
+          <Link
+            href={
+              'https://www.querodecasamento.com.br/lista-de-casamento/aleixok-brunasa'
+            }
+          >
+            <a target="_blank" rel="noreferrer">
+              Lista de presentes
+            </a>
+          </Link>
+        </Flex>
+        <Spacer p="10" />
+      </Box>
     </Flex>
   );
 };
