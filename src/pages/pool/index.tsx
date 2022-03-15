@@ -8,11 +8,9 @@ import {
   Image,
   Button,
   Spacer,
-  FormControl,
 } from '@chakra-ui/react';
-import { Form } from '@unform/web';
 import { motion } from 'framer-motion';
-import type { GetStaticProps, NextPage } from 'next';
+import type { NextPage } from 'next';
 import Link from 'next/link';
 import Router from 'next/router';
 import { useEffect, useState } from 'react';
@@ -22,14 +20,8 @@ import ReactModal from 'react-modal';
 
 import { CustomRadio } from '../../components/CustomRadio';
 import { Header } from '../../components/Header';
-import { Input } from '../../components/input';
 import { useAuth } from '../../context/auth';
 import { api } from '../../services/api';
-
-interface IData {
-  userId: string;
-  isConfirmed: string;
-}
 
 const Pool: NextPage = () => {
   const [openModal, setOpenModal] = useState(false);

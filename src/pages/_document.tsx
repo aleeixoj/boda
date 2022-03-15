@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import { ColorModeScript, theme } from '@chakra-ui/react';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
