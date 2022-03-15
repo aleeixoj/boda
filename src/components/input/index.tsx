@@ -3,7 +3,6 @@
 import { Tooltip } from '@chakra-ui/react';
 import { useField } from '@unform/core';
 import { useEffect, useRef, useState } from 'react';
-import ReactTooltip from 'react-tooltip';
 
 import styles from './styles.module.scss';
 
