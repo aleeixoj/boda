@@ -81,23 +81,6 @@ const Pool: NextPage = () => {
     prepareUserConfirmed(userId, status);
   }
 
-  const customStyles = {
-    content: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      maxWidth: '40rem',
-      height: '40rem',
-      margin: '0 auto',
-      background: 'var(--chakra-colors-white)',
-      boxShadow: '0px 0px 15px 1px rgba(0,0,0,0.4)',
-      padding: '0 0.2rem',
-      borderRadius: '1rem',
-      overflowY: 'auto',
-      overflowX: 'hidden',
-    },
-  };
-
   useEffect(() => {
     if (!cookie.access_code) {
       Router.push('/access');
@@ -289,7 +272,25 @@ const Pool: NextPage = () => {
           <a>Voltar ao convite</a>
         </Link>
         <Spacer p="3" />
-        <ReactModal isOpen={openModal} style={customStyles}>
+        <ReactModal
+          isOpen={openModal}
+          style={{
+            content: {
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              maxWidth: '40rem',
+              height: '40rem',
+              margin: '0 auto',
+              background: 'var(--chakra-colors-white)',
+              boxShadow: '0px 0px 15px 1px rgba(0,0,0,0.4)',
+              padding: '0 0.2rem',
+              borderRadius: '1rem',
+              overflowY: 'auto',
+              overflowX: 'hidden',
+            },
+          }}
+        >
           <Box position={'absolute'} right={'0'}>
             <Button
               p="0"

@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }: any) => {
 
   useEffect(() => {
     if (cookie.access_code) {
-      api.defaults.headers.access_code = `${cookie.access_code}`;
+      api.defaults.headers.common.access_code = `${cookie.access_code}`;
 
       loadData(cookie.access_code);
     }
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }: any) => {
 
       setLoginError(null);
 
-      api.defaults.headers.access_code = response.data.access_code;
+      api.defaults.headers.common.access_code = response.data.access_code;
 
       setCookie('access_code', response.data.access_code);
 
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }: any) => {
       if (responseData) {
         Router.push('/pool');
       }
-    } catch (error: AxiosError) {
+    } catch (error: any) {
       setLoginError(error.response.data.message);
     }
   }
