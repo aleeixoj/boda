@@ -28,6 +28,7 @@ export const theme = extendTheme({
         bg: 'gray.50',
         color: 'gray.600',
         height: '100vh',
+        overflowX: 'hidden',
       },
     },
   },

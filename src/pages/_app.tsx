@@ -1,21 +1,25 @@
 import '../styles/globals.scss';
-import { Box, Center, ChakraProvider, Flex } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
 import { CookiesProvider } from 'react-cookie';
+import Modal from 'react-modal';
 
-import { Header } from '../components/Header';
+import { AuthProvider } from '../context/auth';
 import style from '../styles/home.module.scss';
 import { theme } from '../styles/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  Modal.setAppElement('#__next');
   return (
     <CookiesProvider>
-      <ChakraProvider theme={theme}>
-        {/* <Header /> */}
-        <div className={style.container}>
-          <Component {...pageProps} />
-        </div>
-      </ChakraProvider>
+      <AuthProvider>
+        <ChakraProvider theme={theme}>
+          {/* <Header /> */}
+          <div className={style.container}>
+            <Component {...pageProps} />
+          </div>
+        </ChakraProvider>
+      </AuthProvider>
     </CookiesProvider>
   );
 }

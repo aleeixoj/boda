@@ -22,7 +22,15 @@
       border: 1px solid var(--chakra-colors-gray-500);
     }
   }
-  .label {
+  .inputError {
+    border: 2px solid red;
+    &:focus,
+    &:hover {
+      border: 2px solid red;
+    }
+  }
+
+  label {
     font-size: 1rem;
     color: var(--chakra-colors-gray-200);
     position: absolute;
@@ -30,6 +38,7 @@
     left: 0.625rem;
     top: 0.8rem;
     z-index: 0;
+    // color: red;
   }
 
   &:focus-within {

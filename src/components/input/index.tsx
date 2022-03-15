@@ -1,7 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-use-before-define */
+import { Tooltip } from '@chakra-ui/react';
 import { useField } from '@unform/core';
 import { useEffect, useRef, useState } from 'react';
+import ReactTooltip from 'react-tooltip';
 
 import styles from './styles.module.scss';
 
@@ -13,11 +15,11 @@ interface IProps {
 
 type InputProps = JSX.IntrinsicElements['input'] & IProps;
 
-export function Input({ name, label, children, ...rest }: InputProps) {
+export function Input({ name, label, children, error, ...rest }: InputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [labelStyle, setLabelStyle] = useState({});
 
-  const { fieldName, defaultValue, registerField, error } = useField(name);
+  const { fieldName, defaultValue, registerField } = useField(name);
 
   useEffect(() => {
     registerField({
@@ -34,7 +36,7 @@ export function Input({ name, label, children, ...rest }: InputProps) {
       top: '-0.6rem',
       left: '0.8rem',
       zIndex: 2,
-      color: 'var(--chakra-colors-gray-500)',
+      color: error ? 'red' : 'var(--chakra-colors-gray-500)',
     };
     if (value) {
       setLabelStyle(sty);
@@ -50,19 +52,26 @@ export function Input({ name, label, children, ...rest }: InputProps) {
           {label}
         </label>
       )}
-      <input
-        autoComplete="off"
-        id={fieldName}
-        ref={inputRef}
-        defaultValue={defaultValue}
-        className={styles.input}
-        onBlur={({ target }) => {
-          handleBlur(target.value);
-        }}
-        {...rest}
-      />
+      <Tooltip
+        hasArrow
+        label={error || ''}
+        bg={'red.600'}
+        color={'white'}
+        isOpen={!!error}
+      >
+        <input
+          autoComplete="off"
+          id={fieldName}
+          ref={inputRef}
+          defaultValue={defaultValue}
+          className={error ? styles.inputError : styles.input}
+          onBlur={({ target }) => {
+            handleBlur(target.value);
+          }}
+          {...rest}
+        />
+      </Tooltip>
       {children ? <span className="inputIcon">{children}</span> : null}
-      {error && <span className="input-error">* {error}</span>}
     </div>
   );
 }

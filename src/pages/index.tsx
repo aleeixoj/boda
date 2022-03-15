@@ -6,25 +6,13 @@ import {
   Heading,
   Text,
   Button,
-  Link as ChakraLink,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { NextPage } from 'next';
 import Link from 'next/link';
-import Router from 'next/router';
-import { useCookies } from 'react-cookie';
 import { BsHeartFill } from 'react-icons/bs';
 
 const Home: NextPage = () => {
-  const [useCode] = useCookies(['access_code']);
-
-  async function checkNextPage() {
-    if (!useCode.access_code || useCode.access_code.length < 1) {
-      Router.push('/alert');
-    } else {
-      Router.push('/pool');
-    }
-  }
   return (
     <Flex
       justify={'center'}
@@ -73,6 +61,17 @@ const Home: NextPage = () => {
           }}
         >
           <Box textAlign={'center'}>
+            <Spacer p="1.5" />
+            <Text
+              sx={{
+                '@media(max-width: 768px)': { fontSize: '0.9rem' },
+              }}
+            >
+              “Acima de tudo, porém, revistam-se do amor, que é o elo perfeito.”
+              – Colossenses 3:14
+            </Text>
+
+            <Spacer p="1.5" />
             <Heading
               fontFamily="Great Vibes"
               fontWeight={'300'}
@@ -80,7 +79,6 @@ const Home: NextPage = () => {
             >
               Aleixo e Bruna
             </Heading>
-
             <Text>Convidam para sua festa de casamento</Text>
             <Text>que será realizado no dia</Text>
             <Spacer p="3" />
@@ -116,9 +114,10 @@ const Home: NextPage = () => {
             _hover={{ bg: 'purple.400' }}
             _active={{ bg: 'purple.400' }}
             _focus={{ boxShadow: 'var(--colors-purple-800)' }}
-            onClick={checkNextPage}
           >
-            Confirmar presença
+            <Link href={'/access'}>
+              <a rel="noreferrer">Confirmar presença</a>
+            </Link>
           </Button>
           <Link
             href={
