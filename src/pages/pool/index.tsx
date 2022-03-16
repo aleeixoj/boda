@@ -74,6 +74,7 @@ const Pool: NextPage = () => {
   }
 
   useEffect(() => {
+    document.title = 'Aleixo e Bruna - Pool party';
     if (!cookie.access_code) {
       Router.push('/access');
     }

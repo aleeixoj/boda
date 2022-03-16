@@ -16,6 +16,8 @@ const Access: NextPage = () => {
   }
 
   useEffect(() => {
+    document.title = 'Confirme seu código de acesso';
+
     if (cookie.access_code) {
       Router.push('/pool');
     }
