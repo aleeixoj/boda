@@ -82,7 +82,7 @@ const Pool: NextPage = () => {
   return (
     <Flex
       bg={
-        'url(https://png.pngtree.com/background/20210710/original/pngtree-blue-cool-summer-pool-party-with-watermark-blue-background-picture-image_990627.jpg)'
+        'url(https://i.pinimg.com/originals/be/7f/a9/be7fa9dd634b9c765c8d48693d5b7803.jpg)'
       }
       direction={'column'}
       justify={'center'}
