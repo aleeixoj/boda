@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/core": "^7.0.0",
     "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
@@ -19,6 +20,7 @@
     "axios": "^0.26.1",
     "framer-motion": "^6",
     "next": "12.1.0",
+    "next-seo": "^5.1.0",
     "react": "17.0.2",
     "react-cookie": "^4.1.1",
     "react-dom": "17.0.2",
@@ -26,8 +28,7 @@
     "react-input-mask": "^2.0.4",
     "react-modal": "^3.14.4",
     "sass": "^1.49.9",
-    "scss": "^0.2.4",
-    "@babel/core": "^7.0.0"
+    "scss": "^0.2.4"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",

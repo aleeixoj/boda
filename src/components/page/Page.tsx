@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 
 interface IPageProps {
@@ -9,10 +10,23 @@ interface IPageProps {
 const Page = ({ title, description, children }: IPageProps) => {
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-      </Head>
+      <NextSeo
+        title={title}
+        description={description}
+        openGraph={{
+          url: 'https://boda.vercel.app/',
+          title: 'Aleixo & Bruna te convidam para festa de casamento',
+          images: [
+            {
+              url: '/favicon.jpg',
+              width: 800,
+              height: 600,
+              alt: 'Aleixo e Bruna',
+            },
+          ],
+        }}
+      />
+
       {children}
     </>
   );
