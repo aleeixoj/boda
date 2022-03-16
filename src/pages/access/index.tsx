@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 
 import { Input } from '../../components/input';
+import Page from '../../components/page/Page';
 import { useAuth } from '../../context/auth';
 
 const Access: NextPage = () => {
@@ -16,43 +17,43 @@ const Access: NextPage = () => {
   }
 
   useEffect(() => {
-    document.title = 'Confirme seu código de acesso';
-
     if (cookie.access_code) {
       Router.push('/pool');
     }
   }, []);
 
   return (
-    <Flex
-      justify={'center'}
-      align={'center'}
-      direction={'column'}
-      p="2"
-      height={'100vh'}
-    >
-      <Form onSubmit={(requestData: any) => handleGet(requestData)}>
-        <Flex justify={'center'} align={'center'} direction={'column'} p="2">
-          <Text>Digite seu código de acesso para continuar</Text>
-          <Spacer p="2" />
-          <Input
-            name="access_code"
-            label={'Codigo de acesso'}
-            error={loginError}
-          />
-          <Button
-            bg={'purple.300'}
-            color={'white'}
-            _hover={{ bg: 'purple.400' }}
-            _active={{ bg: 'purple.400' }}
-            _focus={{ boxShadow: 'var(--colors-purple-800)' }}
-            type="submit"
-          >
-            Enviar
-          </Button>
-        </Flex>
-      </Form>
-    </Flex>
+    <Page title="Código de acesso" description="Digite seu código de acesso">
+      <Flex
+        justify={'center'}
+        align={'center'}
+        direction={'column'}
+        p="2"
+        height={'100vh'}
+      >
+        <Form onSubmit={(requestData: any) => handleGet(requestData)}>
+          <Flex justify={'center'} align={'center'} direction={'column'} p="2">
+            <Text>Digite seu código de acesso para continuar</Text>
+            <Spacer p="2" />
+            <Input
+              name="access_code"
+              label={'Codigo de acesso'}
+              error={loginError}
+            />
+            <Button
+              bg={'purple.300'}
+              color={'white'}
+              _hover={{ bg: 'purple.400' }}
+              _active={{ bg: 'purple.400' }}
+              _focus={{ boxShadow: 'var(--colors-purple-800)' }}
+              type="submit"
+            >
+              Enviar
+            </Button>
+          </Flex>
+        </Form>
+      </Flex>
+    </Page>
   );
 };
 
