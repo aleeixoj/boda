@@ -23,7 +23,11 @@ const Home: NextPage = () => {
         align={'center'}
         direction={'column'}
         width="full"
-        height={'100vh'}
+        sx={{
+          '@media(min-width: 720px)': {
+            height: '100vh',
+          },
+        }}
         bg={
           'url(https://i.pinimg.com/originals/b2/ae/21/b2ae21987249aeb22ef94dc7c0f8870c.jpg)'
         }
