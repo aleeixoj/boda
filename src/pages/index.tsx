@@ -135,23 +135,23 @@ const Home: NextPage = () => {
                 <a rel="noreferrer">Confirmar presença</a>
               </Link>
             </Button>
-            <Link
-              href={
-                'https://www.querodecasamento.com.br/lista-de-casamento/aleixok-brunasa'
-              }
+            <Button
+              bg={'green.300'}
+              color={'white'}
+              _hover={{ bg: 'green.400' }}
+              _active={{ bg: 'green.400' }}
+              _focus={{ boxShadow: 'var(--colors-green-800)' }}
             >
-              <Button
-                bg={'green.300'}
-                color={'white'}
-                _hover={{ bg: 'green.400' }}
-                _active={{ bg: 'green.400' }}
-                _focus={{ boxShadow: 'var(--colors-green-800)' }}
+              <Link
+                href={
+                  'https://www.querodecasamento.com.br/lista-de-casamento/aleixok-brunasa'
+                }
               >
                 <a target="_blank" rel="noreferrer">
                   Lista de presentes
                 </a>
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </Flex>
           <Spacer p="10" />
         </Box>
