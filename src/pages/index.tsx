@@ -94,7 +94,7 @@ const Home: NextPage = () => {
               >
                 28 de maio de 2022
               </Heading>
-              <Text>apartir das 10:00 AM</Text>
+              <Text>apartir das 11:00 AM</Text>
               <Spacer p="2" />
               <Heading fontSize={'2xl'}>Local:</Heading>
               <Text>Rua Leonardo Difert, 157</Text>
