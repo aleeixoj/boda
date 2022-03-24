@@ -31,18 +31,18 @@ const Pool: NextPage = () => {
   const userConfirmed: any = [];
   const options = ['Pendente', 'Confirmado', 'Não comparecerá'];
 
-  async function handleSubmit() {
-    delete userConfirmed[-1];
+  // async function handleSubmit() {
+  //   delete userConfirmed[-1];
 
-    const response = await api.post(`/confirm/create/${cookie.access_code}`, {
-      data: userConfirmed,
-    });
+  //   const response = await api.post(`/confirm/create/${cookie.access_code}`, {
+  //     data: userConfirmed,
+  //   });
 
-    if (response.data.message === 'sucess') {
-      loadData();
-      setOpenModal(false);
-    }
-  }
+  //   if (response.data.message === 'sucess') {
+  //     loadData();
+  //     setOpenModal(false);
+  //   }
+  // }
 
   async function prepareUserConfirmed(
     userId: string,
@@ -259,7 +259,7 @@ const Pool: NextPage = () => {
             _focus={{ boxShadow: 'var(--colors-purple-800)' }}
             onClick={() => setOpenModal(true)}
           >
-            Confirmar presença
+            Verificar presença
           </Button>
 
           <Spacer p="1" />
@@ -351,7 +351,7 @@ const Pool: NextPage = () => {
                 );
               })}
 
-              <Button
+              {/* <Button
                 bg={'purple.300'}
                 color={'white'}
                 _hover={{ bg: 'purple.400' }}
@@ -361,6 +361,17 @@ const Pool: NextPage = () => {
                 onClick={() => handleSubmit()}
               >
                 Enviar
+              </Button> */}
+              <Button
+                bg={'purple.300'}
+                color={'white'}
+                _hover={{ bg: 'purple.400' }}
+                _active={{ bg: 'purple.400' }}
+                _focus={{ boxShadow: 'var(--colors-purple-800)' }}
+                height={'2rem'}
+                onClick={() => setOpenModal(false)}
+              >
+                Fechar
               </Button>
             </Flex>
           </ReactModal>
