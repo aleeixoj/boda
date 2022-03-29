@@ -130,7 +130,7 @@ const Home: NextPage = () => {
               _focus={{ boxShadow: 'var(--colors-purple-800)' }}
             >
               <Link href={'/access'}>
-                <a rel="noreferrer">Verificar presença</a>
+                <a rel="noreferrer">Confirmar presença</a>
               </Link>
             </Button>
             <Button
