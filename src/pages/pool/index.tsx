@@ -245,7 +245,7 @@ const Pool: NextPage = () => {
             >
               <Text color={'red.600'}>
                 Precisamos que a sua presença seja confirmada até dia
-                05/04/2022, para que possamos nos organizar. Após esse prazo o
+                10/04/2022, para que possamos nos organizar. Após esse prazo o
                 link de confirmação não estará mais disponível.
               </Text>
             </Box>
