@@ -245,7 +245,7 @@ const Pool: NextPage = () => {
             >
               <Text color={'red.600'}>
                 Precisamos que a sua presença seja confirmada até dia
-                10/04/2022, para que possamos nos organizar. Após esse prazo o
+                05/05/2022, para que possamos nos organizar. Após esse prazo o
                 link de confirmação não estará mais disponível.
               </Text>
             </Box>
@@ -342,8 +342,8 @@ const Pool: NextPage = () => {
                         user.isConfirmed === true
                           ? 'Confirmado'
                           : user.isConfirmed === false
-                          ? 'Não comparecerá'
-                          : 'Pendente'
+                            ? 'Não comparecerá'
+                            : 'Pendente'
                       }
                       onChange={(value) => handleRadioChange(value, user.id)}
                     />
