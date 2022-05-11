@@ -10,7 +10,6 @@ import {
 import { motion } from 'framer-motion';
 import { NextPage } from 'next';
 import Link from 'next/link';
-import { useEffect } from 'react';
 import { BsHeartFill } from 'react-icons/bs';
 
 import Page from '../components/page/Page';

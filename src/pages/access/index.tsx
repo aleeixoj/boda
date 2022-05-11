@@ -10,7 +10,7 @@ import Page from '../../components/page/Page';
 import { useAuth } from '../../context/auth';
 
 const Access: NextPage = () => {
-  const [cookie, setCookie] = useCookies(['access_code']);
+  const [cookie] = useCookies(['access_code']);
   const { signIn, loginError } = useAuth();
   async function handleGet(requestData: any) {
     signIn(requestData);

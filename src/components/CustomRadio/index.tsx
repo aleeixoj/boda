@@ -1,6 +1,5 @@
 import { HStack, useRadioGroup } from '@chakra-ui/react';
 
-import { useAuth } from '../../context/auth';
 import { RadioCard } from './card';
 
 interface ICustomRadioProps {

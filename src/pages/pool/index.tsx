@@ -342,8 +342,8 @@ const Pool: NextPage = () => {
                         user.isConfirmed === true
                           ? 'Confirmado'
                           : user.isConfirmed === false
-                            ? 'Não comparecerá'
-                            : 'Pendente'
+                          ? 'Não comparecerá'
+                          : 'Pendente'
                       }
                       onChange={(value) => handleRadioChange(value, user.id)}
                     />

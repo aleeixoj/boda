@@ -1,5 +1,4 @@
 import { NextSeo } from 'next-seo';
-import Head from 'next/head';
 
 interface IPageProps {
   title: string;
