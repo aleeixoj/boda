@@ -40,7 +40,7 @@ const Home: NextPage = () => {
           alignItems={'center'}
           flexDirection={'column'}
           padding={'1rem 0'}
-          // margin={'1rem'}
+        // margin={'1rem'}
         >
           <motion.div
             initial={{ rotate: 180, scale: 0 }}
@@ -97,7 +97,7 @@ const Home: NextPage = () => {
               >
                 28 de maio de 2022
               </Heading>
-              <Text>apartir das 11:00 AM</Text>
+
               <Spacer p="2" />
               <Heading fontSize={'2xl'}>Local:</Heading>
               <Text>Rua Leonardo Difert, 157</Text>
@@ -121,18 +121,22 @@ const Home: NextPage = () => {
             direction={'column'}
             gap={'1rem'}
           >
-            <Button
-              bg={'purple.300'}
-              color={'white'}
-              _hover={{ bg: 'purple.400' }}
-              _active={{ bg: 'purple.400' }}
-              _focus={{ boxShadow: 'var(--colors-purple-800)' }}
+            <Flex
+              justify="center"
+              align="center"
+              direction={'column'}
+              borderRadius="0.75rem"
+              background={'gray.50'}
+              width={'20rem'}
+              height={'4rem'}
+              boxShadow={'0px 0px 10px -5px #000000'}
             >
-              <Link href={'/access'}>
-                <a rel="noreferrer">Confirmar presença</a>
-              </Link>
-            </Button>
+              <Text>O evento terá início às 11:00 AM</Text>
+              <Text>O Buffet será servido às 12:20 PM</Text>
+            </Flex>
             <Button
+              height="4rem"
+              fontSize="1.2rem"
               bg={'green.300'}
               color={'white'}
               _hover={{ bg: 'green.400' }}
