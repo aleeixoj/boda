@@ -40,7 +40,6 @@ const Home: NextPage = () => {
           alignItems={'center'}
           flexDirection={'column'}
           padding={'1rem 0'}
-        // margin={'1rem'}
         >
           <motion.div
             initial={{ rotate: 180, scale: 0 }}
